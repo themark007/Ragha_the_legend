@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animated Login Page</title>
+    <link rel="stylesheet" href="static/s.css">
+</head>
+<body class="login-page">
+    <!-- Floating Background Circles -->
+    <div class="background-circle circle1"></div>
+    <div class="background-circle circle2"></div>
+    <div class="background-circle circle3"></div>
+
+    <!-- Login Box -->
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form method="POST" action="{{ url_for('login') }}">
+                {% if error %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endif %}
+                <div class="input-container">
+                    <input type="text" name="username" id="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-container">
+                    <input type="password" name="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
